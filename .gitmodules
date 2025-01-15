@@ -1,0 +1,6 @@
+[submodule "shared/lib/threadx"]
+	path = shared/lib/threadx
+	url = https://github.com/eclipse-threadx/threadx.git
+[submodule "shared/lib/netxduo"]
+	path = shared/lib/netxduo
+	url = https://github.com/eclipse-threadx/netxduo.git
