@@ -1,1 +1,0 @@
-../mqtt/coverage.sh
