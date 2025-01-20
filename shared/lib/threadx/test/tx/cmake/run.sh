@@ -1,1 +1,0 @@
-../../../scripts/cmake_bootstrap.sh
