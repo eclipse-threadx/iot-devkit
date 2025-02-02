@@ -10,6 +10,8 @@
   Contributors: 
       Frédéric Desbiens - Initial version.
 
+      Andy Riexinger - Documentation for Mac M1.
+
 -->
 
 # Eclipse ThreadX IoT DevKit Starter Application
@@ -38,6 +40,8 @@ Theoretically, any recent laptop running Windows 11, Linux, or MacOS should do.
 We tested on the following environments:
 - Windows 11 24H2 (Version 10.0.26100.2161)
 - Ubuntu 22.04.5 LTS (Windows Subsystem for Linux version 2.3.24.0)
+- Mac M1, macOS Sonoma 14.6.1 (23G93), native
+- Mac M1, macOS Sonoma 14.6.1 (23G93), Parallels Desktop for Mac Version 17.1.7 (51588), Ubuntu 22.04.5 LTS
 
 
 ### IoT DevKit
@@ -89,6 +93,14 @@ export PATH=$PATH:/opt/arm-gnu-toolchain-13.3.rel1-x86_64-arm-none-eabi/bin
 arm-none-eabi-gcc --version
 ```
 
+**MacOS**
+
+For Mac M1, we tested using version 14.2.rel1. Below are links to download. The install is similar to Linux. 
+
+- Mac M1 native: [arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi.pkg](https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi.pkg)
+- Ubuntu 22.04.5 on Mac M1 via Parallels Desktop: [arm-gnu-toolchain-14.2.rel1-aarch64-arm-none-eabi.tar.xz](https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-aarch64-arm-none-eabi.tar.xz)
+
+
 **Windows**
 ```
 winget install --id=Arm.GnuArmEmbeddedToolchain  -e
@@ -103,7 +115,7 @@ To deploy your code on the AZ3166, just plug the board on your computer. When yo
 
 Once compilation is finished, you will find the executable in the `MXChip/AZ3166/build/app` folder. The default filename is `mxchip_threadx.bin`. Just copy that file to the virtual drive and the AZ3166's boot loader will reset the board and execute your code. There is also a deploy script in the `MXChip/AZ3166/scripts` folder.
 
-You can use any terminal application to connect to the serial port and monitor your application's output. Personally, I use Tera Term, which you can install using `winget`. Just make sure you set the baud rate to **115,200**.
+You can use any terminal application to connect to the serial port and monitor your application's output. Personally, we use Tera Term, which you can install using `winget`. Just make sure you set the baud rate to **115,200**. On MacOS, we used [SerialTools](https://apps.apple.com/de/app/serialtools/id611021963?mt=12) which you can install via the Mac App Store.
 
 If you deployed this application without any changes, you will get the following output in your terminal:
 
