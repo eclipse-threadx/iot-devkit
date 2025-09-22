@@ -11,6 +11,7 @@
  *  Contributors: 
  *     Microsoft         - Initial version
  *     Frédéric Desbiens - 2024 version.
+ *     Frédéric Desbiens - Added telemetry and MQTT.
  */
 
 #include <stdio.h>
