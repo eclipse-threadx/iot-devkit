@@ -46,6 +46,7 @@ static void eclipsetx_thread_entry(ULONG parameter)
         printf("ERROR: Failed to initialize the network (0x%08x)\r\n", status);
     }
 
+     wwd_network_connect();
 }
 
 void tx_application_define(void* first_unused_memory)
