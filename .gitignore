@@ -1,6 +1,8 @@
 .vscode/
 .settings/
 .metadata/
+.theia
+.cache
 _deps/
 build/
 Debug/
