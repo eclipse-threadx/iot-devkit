@@ -20,6 +20,7 @@ set(SOURCES
     cloud_config.h
     console.c
     main.c
+    mqtt_client.c
     screen.c
     sntp_client.c
     telemetry.c
