@@ -19,9 +19,10 @@ set(SOURCES
     board_init.c
     cloud_config.h
     console.c
+    main.c
     screen.c
     sntp_client.c
-    main.c
+    telemetry.c
     wwd_networking.c
 )
 
