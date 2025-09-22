@@ -16,6 +16,8 @@
 #ifndef _CLOUD_CONFIG_H
 #define _CLOUD_CONFIG_H
 
+#include "nx_api.h"
+
 typedef enum
 {
     None         = 0,
@@ -35,6 +37,20 @@ typedef enum
 // ----------------------------------------------------------------------------
 // MQTT Config
 // ----------------------------------------------------------------------------
+#define MQTT_CLIENT_NAME     "ThreadXAZ3166" //Change to unique name.
+// Use test.mosquitto.org in a pinch.
+#define MQTT_LOCAL_BROKER_IP (IP_ADDRESS(5, 196, 78, 28))
+#define MQTT_SUBSCRIBE_TOPIC MQTT_CLIENT_NAME "/incoming" 
+#define MQTT_PUBLISH_TOPIC   MQTT_CLIENT_NAME "/telemetry" 
+
+// ----------------------------------------------------------------------------
+// MQTT Support infrastructure
+// ----------------------------------------------------------------------------
+extern TX_QUEUE mqtt_queue;
+extern TX_EVENT_FLAGS_GROUP mqtt_app_flag;
+#define MQTT_RECEIVE_EVENT 1
+#define MQTT_MESSAGE_READY 2
+#define MQTT_ALL_EVENTS    3
 
 
 #endif // _CLOUD_CONFIG_H
