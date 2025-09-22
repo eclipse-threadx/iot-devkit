@@ -128,7 +128,7 @@ void telemetry_thread_entry(ULONG parameter)
                 printf("Telemetry changed.\r\n");
                 print_sensor_data(new_sensor_data);
             #endif
-            
+            tx_event_flags_set(&mqtt_app_flag, MQTT_MESSAGE_READY, TX_OR);
             current_sensor_data = new_sensor_data;
         }
         #ifdef LOG_TELEMETRY
