@@ -12,10 +12,12 @@
  */
 #include "cloud_config.h"
 #include "mqtt_client.h"
+#include "nx_api.h"
 #include "telemetry.h"
 #include "wwd_networking.h"
 
 #include <stdint.h>
+#include <string.h>
 
 // Helper function.
 #define STRLEN(p) (sizeof(p) - 1)
@@ -48,7 +50,7 @@ static void send_message(){
     //printf("%s", buffer);
 
     status = nxd_mqtt_client_publish(&mqtt_client, MQTT_PUBLISH_TOPIC, STRLEN(MQTT_PUBLISH_TOPIC),
-                                        (CHAR *)buffer, sizeof(buffer), 0, QOS1, NX_WAIT_FOREVER);
+                                        (CHAR *)buffer, strlen(buffer), 0, QOS1, NX_WAIT_FOREVER);
 
     if (status != NXD_MQTT_SUCCESS){
         printf("Publish failed with code: %d\r\n", status);
