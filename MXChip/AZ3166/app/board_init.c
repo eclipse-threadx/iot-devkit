@@ -14,6 +14,7 @@
  */
  
 #include "board_init.h"
+#include "button_handler.h"
 
 #include <stdio.h>
 
@@ -269,6 +270,12 @@ static void GPIO_Init(void)
     gpio_init_structure.Speed = GPIO_SPEED_FREQ_LOW;
     gpio_init_structure.Pull  = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &gpio_init_structure);
+
+    /* Enable EXTI interrupts in NVIC */
+    HAL_NVIC_SetPriority(EXTI4_IRQn, 2, 0);
+    HAL_NVIC_EnableIRQ(EXTI4_IRQn);
+    HAL_NVIC_SetPriority(EXTI15_10_IRQn, 2, 0);
+    HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
     /* Configure RGB LED pins.  */
     gpio_init_structure.Pin       = GPIO_PIN_4;
