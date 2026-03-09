@@ -150,9 +150,12 @@ If the WiFi is properly congiured, you will get the output below at application 
 > ```
 
 ## Where to go from here
-The starter application provided in this repository simply initiates the board and WiFi connectivity.
+The starter application provided on the `main` branch simply initiates the board and WiFi connectivity. 
 
-We will eventually deliver updates showing how to access the sensors and publish data over MQTT and HTTP. Stay tuned!
+Other branches bundle additional functionality on top of what the `main` branch provides.
+- `telemetry`: Adds code to read the on-board sensors and print the output.
+- `mqtt`: Adds code to publish the telemetry over MQTT. Also creates a second thread subscribing to an MQTT topic; the received messages will be printed.
+- `arcade`: A collection of arcade games. Thanks to Sébastien Heurtematte for this contribution! 
 
 
 ### Networking support
